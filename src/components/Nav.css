@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,700&display=swap');
+nav {
+    height: 10vh;
+    font-size: 3vh;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #36384a;
+    /* color: white; */
+
+}
+
+
+.navbar {
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+.navbar-brand {
+    font-size: 3vh !important;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(100, 149, 237, 0.8) !important; /* Cornflower Blue with some transparency */
+    transition: transform 0.3s; /* For a smooth zoom effect */
+}
+
+.navbar-nav .nav-link.active {
+    color: white !important;
+    font-weight: 400 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+    opacity: 0.7;
+    transform: scale(1.05); /* This gives the zoom-in effect */
+}
+
+
+/* Add some right margin to each nav item */
+.navbar-nav .nav-item {
+    margin-right: 20px; /* adjust this value as per your needs */
+}
+
+
+
+/* media queries */
+@media screen and (max-width: 1000px){
+    .navbar-toggler{
+        background-color: white !important;
+    }
+    
+    .navbar-collapse.show {
+        /* background-color: rgb(108, 54, 54); /* Change to your desired background color */
+        margin-top: 3vh;
+    }
+    
+    .navbar-collapse.show .nav-item {
+        padding: 10px 0; /* Adjust as needed */
+    }
+    
+    .navbar-collapse.show .nav-item {
+        background-color: rgba(153, 149, 143, 0.61);
+        border: 1px solid black; /* Change to your desired border color */
+        margin: 5px 0; /* Adds space between items; adjust as needed */
+        border-radius: 5px;
+    
+        text-align: center;
+    }
+}
+
+

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu:ital,wght@0,400;1,700&display=swap');
+
+
+.video-container {
+    position: relative;
+    height: 70vh; /* Adjust based on your preference */
+    overflow: hidden; /* Hide any parts of the video that exceeds the container */
+    font-family: 'Permanent Marker', cursive;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%); /* Center the video */
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    color: white; /* Text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 2vh;
+}
+
+h1 {
+    font-size: 5vh; /* Adjust font size as needed */
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+    width: 60%; /* Control the width of the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+}
