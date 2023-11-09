@@ -1,12 +1,15 @@
 import "./Nav.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        {/* Use Link for the brand to go to the home route */}
+        <Link className="navbar-brand" to="/">
           PUBGM Wiki & Strategy
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,20 +23,23 @@ const Nav = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            {/* Update these to use the Link component */}
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              {/* If you have a route for Weapons, update the 'to' prop */}
+              <Link className="nav-link" to="/weapons">
                 Weapons
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Articles
-              </a>
+              {/* Use Link to navigate to the News page */}
+              <Link className="nav-link" to="/add">
+                News(Add News)
+              </Link>
             </li>
           </ul>
         </div>

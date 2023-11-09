@@ -33,6 +33,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
+
 // api endpoints
 // news handeling
 app.use("/api/news", newsRoutes);
