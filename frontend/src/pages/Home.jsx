@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import videoPath from "../assets/trailer.mp4";
 import Test from "../components/Test";
+import NewsList from "../components/NewsList";
 
 const Home = () => {
   const newsArray = [
@@ -24,7 +25,6 @@ const Home = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Nav />
-      <Test></Test>
       <div className="flex-grow-1">
         <div className="video-container">
           <video className="bg-video" loop muted autoPlay>
@@ -40,7 +40,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="news-section">
+        {/* <div className="news-section">
           <h2 className="text-center my-5">News</h2>
           <div className="container">
             <div className="row">
@@ -64,7 +64,8 @@ const Home = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
+        <NewsList></NewsList>
       </div>
       <Footer />
     </div>

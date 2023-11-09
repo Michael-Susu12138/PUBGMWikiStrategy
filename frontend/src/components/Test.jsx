@@ -3,12 +3,13 @@ import axios from "axios";
 
 const Test = () => {
   const [data, setData] = useState(null);
+  console.log("hit");
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios("http://localhost:8000/api/data");
-        console.log(result.data.message);
-        setData(result.data.message);
+        const result = await axios("http://localhost:8000/api/news");
+        console.log(result.data);
+        // setData(result.data.message);
       } catch (err) {
         console.log("Error fetched", err);
       }
