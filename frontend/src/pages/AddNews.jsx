@@ -32,7 +32,10 @@ const AddNews = () => {
     };
 
     try {
-      await axios.post("http://localhost:8000/api/news/add", submissionData);
+      await axios.post(
+        "https://pubgm-wiki-strat-api.onrender.com/api/news/add",
+        submissionData
+      );
       navigate("/");
     } catch (error) {
       console.error("Error submitting news:", error);
