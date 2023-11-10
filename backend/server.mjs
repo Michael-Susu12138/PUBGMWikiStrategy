@@ -6,9 +6,6 @@ import path from "path";
 import url from "url";
 import cors from "cors";
 
-// database handeling
-import db from "./db.mjs";
-
 // routes import
 import newsRoutes from "./routes/newsRoutes.mjs";
 
