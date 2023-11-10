@@ -13,7 +13,9 @@ const NewsList = () => {
     // Fetch news from the backend
     const fetchNews = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/news");
+        const response = await axios.get(
+          "https://pubgm-wiki-strat-api.onrender.com/api/news"
+        );
         console.log(response.data);
         setNews(response.data); // Assuming the response body is an array of news
         setLoading(false);
