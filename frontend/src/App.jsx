@@ -5,6 +5,7 @@ import AddNews from "./pages/AddNews";
 import "./App.css";
 
 function App() {
+  // console.log(process.env.REACT_APP_API);
   return (
     <Router>
       <Routes>
