@@ -15,10 +15,18 @@ const ContactMe = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Example with React
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = {
+      name: "User Name",
+      email: "user@example.com",
+      subject: "Subject of the message",
+      message: "The message content",
+    };
+
     try {
-      await axios.post("https://localhost:8000/api/contact", formData);
+      await axios.post("http://localhost:8000/api/mail/send", formData);
       alert("Message sent successfully.");
     } catch (error) {
       console.error("Error sending message:", error);

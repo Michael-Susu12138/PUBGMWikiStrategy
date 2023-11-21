@@ -8,6 +8,7 @@ import cors from "cors";
 
 // routes import
 import newsRoutes from "./routes/newsRoutes.mjs";
+import mailRoutes from "./routes/mailRoutes.mjs";
 
 const app = express(); // create app instance
 
@@ -35,6 +36,7 @@ app.use(express.json());
 // api endpoints
 // news handeling
 app.use("/api/news", newsRoutes);
+app.use("/api/mail", mailRoutes);
 
 // TESTING DATA
 app.get("/", (req, res) => {

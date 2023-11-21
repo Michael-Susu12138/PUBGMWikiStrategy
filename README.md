@@ -8,27 +8,60 @@ Owing to its widespread acclaim and competitive nature, PUBG Mobile has birthed 
 
 This website serves as both an information hub and a strategy resource. Users can delve into detailed descriptions and statistics of every item in PUBG Mobile, including an exhaustive weapon breakdown. Further, for those eager to improve their gameplay, our platform offers curated articles and video tutorials that provide invaluable insights, tips, and strategies. Some of the standout features of the site include a dedicated weapon tab, a user lookup tool where players can search and access profiles using player usernames, and a rich library of strategic content to help players climb the ranks and establish themselves as formidable contenders.
 
-
 ## Data Model
 
 The application will store Users, Weapon Stats, Articles, etc
 
-* users can have multiple articles and linkedAccounts to sync their match history and portfolios
-* each weapon can have embedded articles and its corresponding statistics
-* More Data Models ... 
+- users can have multiple articles and linkedAccounts to sync their match history and portfolios
+- each weapon can have embedded articles and its corresponding statistics
+- More Data Models ...
 
-An User:
+News:
 
 ```javascript
-{
-  username: "shannonshopper",
-  hash: // a password hash,
-  articles: [
-    { title: "Optimal Ranges for AKM", content: "The AKM is most effective at mid to long range combat...", views: "1234" },
-    { title: "Recoil Control with AKM", content: "Managing recoil is crucial with AKM. Here's how you can...", views: "5678" },
-  ]
-  linkedAccount: // if the user link to any account
-}
+const NewsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  summary: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  author: {
+    type: String,
+    required: true,
+  },
+  publishedDate: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedDate: {
+    type: Date,
+    default: null,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  tags: [
+    {
+      type: String,
+    },
+  ],
+  imageUrl: {
+    type: String,
+    default: null,
+  },
+  readMoreUrl: {
+    type: String,
+    default: null,
+  },
+});
 ```
 
 Weapon Stats with embedded articles:
@@ -49,16 +82,13 @@ Weapon Stats with embedded articles:
 
 ```
 
-
-## [Link to Commented First Draft Schema](db.mjs) 
+## [Link to Commented First Draft Schema](db.mjs)
 
 ## Wireframes
 
 /weapons - page for all the weapons: with filtering functionality
 
 <img src="./documentation/weapons.jpeg">
-
-
 
 /weapons/rifle/akm : displaying statistics for AKM, including its ratings, videos, and links to its related articles
 
@@ -67,7 +97,6 @@ Weapon Stats with embedded articles:
 /username: user profile
 
 <img src='./documentation/user.jpeg'>
-
 
 ## User Stories or Use Cases
 
@@ -80,27 +109,23 @@ Weapon Stats with embedded articles:
 
 ## Research Topics
 
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) ReactJS+TypeScript
-    * used ReactJS as the frontend framework, and I also incorporate the TypeScript to implement data type validations. 
+- (5 points) Integrate user authentication
+  - I'm going to be using passport for user authentication
+  - And account has been made for testing; I'll email you the password
+  - see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
+  - see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
+- (4 points) Perform client side mailing services using nodemail Library
+  - if you put in a number that's greater than 5, an error message will appear in the dom
+- (5 points) ReactJS
+  - used ReactJS as the frontend framework, and I also incorporate the TypeScript to implement data type validations.
 
-
-## [Link to Initial Main Project File](index.html) 
+## [Link to Initial Main Project File](index.html)
 
 index.html -- is the file where the browser render the application
 
-./src/App.tsx -- is the file where the content I have to modify
+./frontend/src/App.jsx -- is the file where the content I have to modify
 
 ## Annotations / References Used
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. <a href="https://react.dev/learn">ReactJS Tutorials</a> - (add link to source code that was based on this)
-3. TypeScript - 
-4. Vite
