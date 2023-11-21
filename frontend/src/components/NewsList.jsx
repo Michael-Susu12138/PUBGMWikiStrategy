@@ -14,7 +14,7 @@ const NewsList = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          "https://pubgm-wiki-strat-api.onrender.com/api/news"
+          "" + import.meta.env.VITE_API + "api/news"
         );
         console.log(response.data);
         setNews(response.data); // Assuming the response body is an array of news

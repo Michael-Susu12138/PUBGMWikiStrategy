@@ -1,37 +1,42 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import emailjs from "@emailjs/browser";
 
-const ContactMe = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     subject: "",
     message: "",
   });
+
+  const form = useRef();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Example with React
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = {
-      name: "User Name",
-      email: "user@example.com",
-      subject: "Subject of the message",
-      message: "The message content",
-    };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    try {
-      await axios.post("http://localhost:8000/api/mail/send", formData);
-      alert("Message sent successfully.");
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message.");
-    }
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_KEY,
+        import.meta.env.VITE_TEMPLATE_KEY,
+        form.current,
+        import.meta.env.VITE_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message");
+        }
+      );
   };
 
   return (
@@ -39,18 +44,18 @@ const ContactMe = () => {
       <Nav />
       <div className="container flex-grow-1 my-5">
         <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={sendEmail}>
           <input
-            name="name"
-            value={formData.name}
+            name="user_name"
+            value={formData.user_name}
             onChange={handleChange}
             placeholder="Your Name"
             required
             className="form-control mb-3"
           />
           <input
-            name="email"
-            value={formData.email}
+            name="user_email"
+            value={formData.user_email}
             onChange={handleChange}
             placeholder="Your Email"
             required
@@ -84,4 +89,4 @@ const ContactMe = () => {
   );
 };
 
-export default ContactMe;
+export default Contact;

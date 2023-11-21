@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "server.mjs",
   "scripts": {
-    "start": "nodemon server.mjs"
+    "start": "nodemon server.mjs",
+    "test": "jest"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^8.0.0",
-    "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1"
   },
   "engines": {
@@ -18,6 +18,15 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "jest-mock": "^29.7.0",
+    "sinon": "^17.0.1",
     "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.js",
+      "**/?(*.)+(spec|test).js"
+    ]
   }
 }
