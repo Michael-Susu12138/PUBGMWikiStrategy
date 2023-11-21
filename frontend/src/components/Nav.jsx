@@ -41,6 +41,12 @@ const Nav = () => {
                 News(Add News)
               </Link>
             </li>
+            <li className="nav-item">
+              {/* Use Link to navigate to the Contact page */}
+              <Link className="nav-link" to="/contact">
+                Contact Me
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
