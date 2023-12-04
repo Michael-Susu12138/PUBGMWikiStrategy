@@ -11,6 +11,7 @@ const NewsList = () => {
 
   useEffect(() => {
     // Fetch news from the backend
+    console.log("" + import.meta.env.VITE_API + "api/news");
     const fetchNews = async () => {
       try {
         const response = await axios.get(

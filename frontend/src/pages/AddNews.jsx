@@ -33,7 +33,7 @@ const AddNews = () => {
 
     try {
       await axios.post(
-        "https://pubgm-wiki-strat-api.onrender.com/api/news/add",
+        "" + import.meta.env.VITE_API + "api/news/add",
         submissionData
       );
       navigate("/");

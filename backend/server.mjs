@@ -1,13 +1,20 @@
 import "./config.mjs";
 
+// auth config imports
+import passport from "./auth/authConfig.mjs";
+
 import { log } from "console";
 import express from "express";
+import session from "express-session";
+import flash from "connect-flash";
+
 import path from "path";
 import url from "url";
 import cors from "cors";
 
 // routes import
 import newsRoutes from "./routes/newsRoutes.mjs";
+import authRoutes from "./routes/authRoutes.mjs";
 
 const app = express(); // create app instance
 
@@ -20,6 +27,20 @@ app.use(cors());
 
 // body parser
 app.use(express.urlencoded({ extended: false }));
+
+// authentications
+app.use(
+  session({
+    secret: "your_secret_key",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash()); // for warnings
 
 app.use((req, res, next) => {
   log("request Method: ", req.method);
@@ -35,6 +56,7 @@ app.use(express.json());
 // api endpoints
 // news handeling
 app.use("/api/news", newsRoutes);
+app.use("/api/auth", authRoutes);
 
 // TESTING DATA
 app.get("/", (req, res) => {

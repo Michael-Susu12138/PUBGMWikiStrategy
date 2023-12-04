@@ -47,6 +47,18 @@ const Nav = () => {
                 Contact Me
               </Link>
             </li>
+            <li className="nav-item">
+              {/* Use Link to navigate to the login page */}
+              <Link className="nav-link" to="/login">
+                Log in
+              </Link>
+            </li>
+            <li className="nav-item">
+              {/* Use Link to navigate to the login page */}
+              <Link className="nav-link" to="/register">
+                Register(Sign up)
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -7,3 +7,4 @@ router.get("/", getAllNews);
 router.post("/add", createNews);
 
 export default router;
+

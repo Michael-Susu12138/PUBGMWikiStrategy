@@ -1,4 +1,5 @@
 import NewsModel from "./models/News.mjs";
+import User from "./models/User.mjs";
 import mongoose from "mongoose";
 
 // mongoose.connect(process.env.DSN);
@@ -10,6 +11,7 @@ mongoose
 const db = {
   mongoose: mongoose,
   News: NewsModel,
+  User: User,
 };
 
 export default db;
