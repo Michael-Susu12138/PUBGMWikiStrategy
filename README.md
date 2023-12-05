@@ -127,5 +127,23 @@ index.html -- is the file where the browser render the application
 
 ## Annotations / References Used
 
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. <a href="https://react.dev/learn">ReactJS Tutorials</a> - (add link to source code that was based on this)
+This project incorporates a variety of technologies and external resources. The following are key references used, along with links to specific parts of the source code influenced by these resources:
+
+1. **Passport.js Authentication**: The Passport.js documentation was crucial for implementing our authentication system. It provided guidance on using strategies and middleware for user authentication.
+
+   - [Passport.js Authentication Docs](http://passportjs.org/docs) 
+
+2. **ReactJS Development**: ReactJS was instrumental in building our frontend. We relied on official tutorials for best practices in creating reactive UI components.
+
+   - [ReactJS Tutorials](https://react.dev/learn) 
+
+3. **EmailJS Integration**: EmailJS was used for handling email operations within the application. We followed their documentation to integrate email services seamlessly.
+
+   - [EmailJS Documentation](https://www.emailjs.com/docs/) 
+
+4. **Connect Flash for Messaging**: Connect Flash was utilized for flash messaging in the application, aiding in displaying success or error messages to the user.
+
+   - [Connect Flash Documentation](https://github.com/jaredhanson/connect-flash) 
+
+5. **Bcrypt for Password Hashing**: We used Bcrypt for secure password hashing. This was essential for maintaining user password security in our application.
+   - [Bcrypt Documentation](https://github.com/kelektiv/node.bcrypt.js) 
