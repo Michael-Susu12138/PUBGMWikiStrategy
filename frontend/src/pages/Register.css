@@ -1,0 +1,16 @@
+/* This styles your main container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure it is at least as tall as the viewport */
+}
+
+/* This styles your content area */
+.content {
+  flex: 1; /* This will make the content area grow and push the footer down */
+}
+
+/* This styles your footer */
+.footer {
+  /* No special rules needed, but you can add styling as desired */
+}
