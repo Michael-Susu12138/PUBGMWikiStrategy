@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,7 +50,9 @@ const Login = () => {
 
   return (
     <div>
+      <Nav></Nav>
       <h2>Login</h2>
+      <h3> Username: admin1; password: 123</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username</label>
