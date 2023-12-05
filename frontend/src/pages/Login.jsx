@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API}api/auth/login`, // Update with your API endpoint
+        `${import.meta.env.VITE_API}/api/auth/login`, // Update with your API endpoint
         credentials
       );
       if (response.data.message) {

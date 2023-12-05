@@ -7,6 +7,7 @@ import { log } from "console";
 import express from "express";
 import session from "express-session";
 import flash from "connect-flash";
+import MongoStore from "connect-mongo";
 
 import path from "path";
 import url from "url";
@@ -31,9 +32,11 @@ app.use(express.urlencoded({ extended: false }));
 // authentications
 app.use(
   session({
-    secret: "your_secret_key",
+    secret: "your secret key",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: process.env.DSN }),
+    cookie: { secure: true }, // Set to true if using https
   })
 );
 

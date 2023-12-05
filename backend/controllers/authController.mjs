@@ -31,14 +31,14 @@ const loginUser = (req, res, next) => {
       return res.status(500).json({ error: err.message });
     }
     if (!user) {
-      // If user is not found or password does not match
       return res.status(401).json({ message: info.message });
     }
     req.logIn(user, (err) => {
       if (err) {
         return res.status(500).json({ error: err.message });
       }
-      // Successfully authenticated, send user info or a success message
+      // Store user info in session
+      req.session.user = { id: user.id, username: user.username };
       return res.status(200).json({ message: "Logged in successfully" });
     });
   })(req, res, next);
@@ -46,8 +46,16 @@ const loginUser = (req, res, next) => {
 
 const logoutUser = (req, res) => {
   req.logout();
-  // Don't redirect; instead send a JSON response for the client to handle
+  req.session.destroy(); // Destroy the session
   res.status(200).json({ message: "Logged out successfully" });
 };
 
-export { registerUser, loginUser, logoutUser };
+const currentUser = (req, res) => {
+  if (req.session.user) {
+    res.json({ user: req.session.user });
+  } else {
+    res.json({ user: null });
+  }
+};
+
+export { registerUser, loginUser, logoutUser, currentUser };
