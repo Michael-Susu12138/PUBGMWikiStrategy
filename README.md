@@ -111,13 +111,13 @@ Weapon Stats with embedded articles:
 
 - (5 points) Integrate user authentication
   - I'm going to be using passport for user authentication
-  - And account has been made for testing; I'll email you the password
-  - see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-  - see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-- (4 points) Perform client side mailing services using nodemail Library
-  - if you put in a number that's greater than 5, an error message will appear in the dom
+  - And account has been made for testing; 
+  - see <code>[my register page](https://pubgm-wiki-strat.onrender.com/register)</code> for register page
+  - see <code>[my logged in page](https://pubgm-wiki-strat.onrender.com/login)</code> for login page
+- (4 points) Perform client side mailing services using emailJS
+  - [my contact me page](https://pubgm-wiki-strat.onrender.com/contact)
 - (5 points) ReactJS
-  - used ReactJS as the frontend framework, and I also incorporate the TypeScript to implement data type validations.
+  - used ReactJS as the frontend framework
 
 ## [Link to Initial Main Project File](index.html)
 
